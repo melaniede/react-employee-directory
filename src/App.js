@@ -5,20 +5,19 @@ import Header from "./components/Header";
 import SearchForm from "./components/Search";
 import API from "./utils/API.js"
 import Table from "./components/Table";
-
+import EmployeeRow from "./components/EmployeeRow";
 
 
 function App() {
 
- const [result, setResult] = useState();
+ const [results, setResult] = useState([]);
 
  useEffect(() => {
   API.getEmployees()
-    .then(res => setResult({ result: res.data }))
+    .then(res => setResult( res.data.results ))
     .catch(err => console.log(err));
-    }, []);
-    console.log(result);
-
+    }, []); 
+    console.log(results);
 
   return (
     // <Router>
@@ -26,9 +25,9 @@ function App() {
         <Header />
         <SearchForm />
         <Table />
-        {/* <myComponent /> */}
-        {result.results.map(employee => (
-        <Employee
+        {results.map(employee => (
+        <EmployeeRow
+          key={employee.id.value}
           image={employee.picture.thumbnail}
           name={employee.name.first + " " + employee.name.last}
           email={employee.email}
