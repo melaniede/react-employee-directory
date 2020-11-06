@@ -3,9 +3,8 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Header from "./components/Header";
 import SearchForm from "./components/Search";
-// import myComponent from "./components/Table";
 import API from "./utils/API.js"
-// import tableContainer from "./components/Table";
+import Table from "./components/Table";
 
 
 
@@ -26,7 +25,16 @@ function App() {
       <div>
         <Header />
         <SearchForm />
+        <Table />
         {/* <myComponent /> */}
+        {result.results.map(employee => (
+        <Employee
+          image={employee.picture.thumbnail}
+          name={employee.name.first + " " + employee.name.last}
+          email={employee.email}
+          phone={employee.phone}
+        />
+      ))};
       </div>
     // </Router>
   );
