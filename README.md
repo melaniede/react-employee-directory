@@ -25,6 +25,7 @@ The user should be able to:
 ### Dependencies 
 * [React](https://www.npmjs.com/package/react)
 * [Axios](https://www.npmjs.com/package/axios)
+* [Material-Table](https://material-table.com/#/docs/install)
 
 ### Contact
 Melanie DeBarros
