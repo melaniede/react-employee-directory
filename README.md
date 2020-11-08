@@ -7,7 +7,7 @@ The employee directory is built using React. The directory gives employees and m
 Get started on viewing your employee info! [Link to app](https://melaniede.github.io/react-employee-directory/).
 
 ## Employee Directory
-<img src="src/assets/images/employee-table.png" width="400">
+<img src="src/assets/images/employee-table.png" width="500">
 
 ### User Story
 ```
