@@ -2,10 +2,8 @@ import logo from './logo.svg';
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Header from "./components/Header";
-import SearchForm from "./components/Search";
 import API from "./utils/API.js"
-import Table from "./components/Table";
-import EmployeeRow from "./components/EmployeeRow";
+import MaterialTable from "material-table";
 
 
 function App() {
@@ -20,22 +18,25 @@ function App() {
     console.log(results);
 
   return (
-    // <Router>
       <div>
         <Header />
-        <SearchForm />
-        <Table />
-        {results.map(employee => (
-        <EmployeeRow
-          key={employee.id.value}
-          image={employee.picture.thumbnail}
-          name={employee.name.first + " " + employee.name.last}
-          email={employee.email}
-          phone={employee.phone}
-        />
-      ))};
+        <div style={{ maxWidth: '100%' }}>
+          <MaterialTable
+            title= 'Employee Table'
+            columns={[
+              {title: 'Employee', field: 'picture.thumbnail', render: rowData => <img src={rowData.picture.thumbnail}/> },
+              {title: 'First Name', field: 'name.first'},
+              {title: 'Last Name', field: 'name.last'},
+              {title: 'Email', field: 'email'},
+              {title: 'Phone Number', field: 'phone'}
+            ]}
+            data={results}
+            options={{
+              search: true,
+              showTitle: false
+            }} />
+        </div>
       </div>
-    // </Router>
   );
 }
 
