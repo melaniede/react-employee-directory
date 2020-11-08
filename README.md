@@ -4,9 +4,9 @@
 The employee directory is built using React. The directory gives employees and managers the ability to view non-sensitive data about other employees. The application's UI is broken up into components, manages component state, and responds to user events.
 
 ### Deployed Application
-Get started on viewing your employee info! [Link to app in Heroku](https://budget-tracker-react.herokuapp.com/).
+Get started on viewing your employee info! [Link to app](https://melaniede.github.io/react-employee-directory/).
 
-## Budget Tracker
+## Employee Directory
 <img src="public/assets/images/budet_tracker.png" width="400">
 
 ### User Story
