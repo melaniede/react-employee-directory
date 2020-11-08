@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Header from "./components/Header";
 import API from "./utils/API.js"
+// import material-table library
 import MaterialTable from "material-table";
 
 
@@ -33,7 +34,8 @@ function App() {
             data={results}
             options={{
               search: true,
-              showTitle: false
+              showTitle: false,
+              pageSizeOptions:[10,25,50]
             }} />
         </div>
       </div>
